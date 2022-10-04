@@ -33,10 +33,40 @@ public class ProductManagerTest {
     }
 
     @Test
-    public void shouldSearchBy() {
+    public void shouldSearchByNameSmartphone() {
 
         Product[] expected = { product3 };
         Product[] actual = manager.searchBy("Galaxy");
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+
+    @Test
+    public void shouldSearchByAuthor() {
+
+        Product[] expected = { product1 };
+        Product[] actual = manager.searchBy("Алексей Пехов");
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+
+    @Test
+    public void shouldSearchByManufacturer() {
+
+        Product[] expected = { product2 };
+        Product[] actual = manager.searchBy("Apple");
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+
+    @Test
+    public void shouldSearchByNameBook() {
+
+        Product[] expected = { product4 };
+        Product[] actual = manager.searchBy("Онегин");
 
         Assertions.assertArrayEquals(expected, actual);
 
